@@ -1,0 +1,29 @@
+OUTPUT 
+*********
+
+    LL(1)  PARSER  TABLE
+
+    NT      <id>         +         *         ;
+    E        Te     Error     Error     Error
+    e     Error       +Te     Error
+    T        Vt     Error     Error     Error
+    t     Error                 *Vt
+    V      <id>     Error     Error     Error
+
+    ENTER THE STRING :<id>+<id>*<id>;
+
+CHECKING VALIDATION OF THE STRING
+            E
+            Te
+            Vte
+            <id>te
+            <id>e
+            <id>+Te
+            <id>+Vte
+            <id>+<id>te
+            <id>+<id>*Vte
+            <id>+<id>*<id>te
+            <id>+<id>*<id>e
+            <id>+<id>*<id>
+            ENTERED STRING IS VALID
+[/Code]
