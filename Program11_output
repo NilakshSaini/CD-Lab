@@ -1,0 +1,48 @@
+              OUTPUT:
+***********************************/
+
+Enter Exp : [a+b*c]
+OPERATOR PRECEDENCE MATRIX
+===========================
+   + * ( ) ]
++  > < < > >
+*  > > < > >
+(  < < < =
+)  > >   > >
+[  < < <   =
+show tree
+                                                                                
+a                                                                               
+b                                                                               
+c                                                                               
+*                                                                               
++                                                                               
+Over                                                                            
+Enter Exp : [a+(b*c)+d]
+OPERATOR PRECEDENCE MATRIX                                                      
+===========================                                                     
+   + * ( ) ]                                                                    
++  > < < > >                                                                    
+*  > > < > >                                                                    
+(  < < < =                                                                      
+)  > >   > >                                                                    
+[  < < <   =                                                                    
+show tree                                                                                                                                                    
+                                                                                
+a                                                                               
+b                                                                               
+c                                                                               
+*                                                                               
++                                                                               
+d                                                                               
++                                                                               
+Over                                                                            
+Enter Exp : [)]
+OPERATOR PRECEDENCE MATRIX                                                      
+===========================                                                     
+   + * ( ) ]                                                                    
++  > < < > >                                                                    
+*  > > < > >                                                                    
+(  < < < =                                                                      
+)  > >   > >                                                                    
+[  < < <   =                                                      
