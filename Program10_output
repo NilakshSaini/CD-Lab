@@ -1,0 +1,48 @@
+Enter number of terminals: 5
+Enter terminals:+*()i
+Enter number of non-terminals:3
+Enter non-terminals:ETF
+Enter number of productions:6
+Enter productions:
+E->E+T
+E->T
+T->T*F
+T->F
+F->(E)
+F->i
+Follow table:
+FOLLOW(E)={+ ) $}
+FOLLOW(F)={+ * ) $}
+FOLLOW(T)={ + * ) $}
+
+First Table :
+FIRST(E)={ ( i }
+FIRST(E)={ ( i }
+FIRST(E)={ ( i }
+Expected parse table:
+
+   +    *	   (	   )	   i	   $	   E	   T	   F
+
+I0	  S4	    S5			  1	   2	   3			  
+I1	  S6		  ACC
+I2	  R1	  S7			  R1			  R1	 
+I3	  R3	  R3			  R3			  R3
+I4					  S4			  S5	  ACC	 8	   2	   3
+I5	  R5	  R5			  R5			  R5					 
+I6			  ACC
+I7					  S4			  S5							  9
+I8	  S10					 S11			 ACC			
+I9	  R2	  R2			  R2			  R2
+I10			   ACC	
+I11	 R4	  R4			  R4			  R4
+
+Enter i/p string: i+i*i
+
+STACK		   INPUT				   ACTION
+
+0		   i+i*i$				  Shift
+0i5      	  	 +i*i$				   Reduce
+0F3			 +i*i$				   Reduce
+0T2			 +i*i$				   Reduce
+0E1			 +i*i$				   Shift
+0E1+6	  		  i*i$		      ERROR! STRING NOT ACCEPTED!
