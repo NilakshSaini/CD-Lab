@@ -1,0 +1,56 @@
+#include<stdio.h>
+#include <ctype.h>
+char stack[50];
+int top=-1;
+void push(char item) {
+    stack[++top] = item;
+}
+char pop() {
+    if (top==-1) {
+        return -1;
+    }
+    else {
+        return stack[top--];
+    }
+}
+int priority(char p)
+{
+    if (p == '(')
+        return 0;
+    if (p == '+' || p == '-')
+        return 1;
+    if (p == '*' || p == '/')
+        return 2;
+}
+int main() {
+    char i, str[50];
+    printf("Enter infix expression:");
+    scanf(" %s", str);
+    char *ptr=str;
+    while (*ptr != '\0') {
+        if (isalnum(*ptr)) {
+            printf("%c", *ptr);
+        }
+        else if (*ptr == '(')
+            push(*ptr);
+        else if (*ptr == ')')
+        {
+            while ((i = pop()) != '(')
+                printf("%c", i);
+        }
+        else
+        {
+            while (priority(stack[top]) >= priority(*ptr)) {
+                printf("%c", pop());
+            }
+            push(*ptr);
+        }
+        ptr++;
+    }
+    while (top != -1)
+    {
+        printf("%c", pop());
+    }
+    return 0;
+
+}
